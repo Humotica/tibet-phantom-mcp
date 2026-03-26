@@ -12,6 +12,10 @@ Part of the [TIBET ecosystem](https://humotica.com) by [HumoticaOS](https://gith
 pip install tibet-phantom-mcp
 ```
 
+## Setup
+
+You need a running Phantom server. Set the `PHANTOM_URL` environment variable to point to your server.
+
 ## Claude Code / Claude Desktop Config
 
 Add to your MCP settings:
@@ -22,7 +26,7 @@ Add to your MCP settings:
     "phantom": {
       "command": "tibet-phantom-mcp",
       "env": {
-        "PHANTOM_URL": "https://phantom.humotica.com"
+        "PHANTOM_URL": "https://your-phantom-server.example.com"
       }
     }
   }
@@ -82,7 +86,7 @@ phantom_audit(session_id="phantom-1234-abc")
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `PHANTOM_URL` | `https://phantom.humotica.com` | Phantom server URL |
+| `PHANTOM_URL` | `http://localhost:8000` | Phantom server URL |
 | `PHANTOM_TIMEOUT` | `30` | HTTP timeout in seconds |
 
 ## Related TIBET Packages

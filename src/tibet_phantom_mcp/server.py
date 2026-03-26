@@ -11,7 +11,7 @@
 #   "mcpServers": {
 #     "phantom": {
 #       "command": "tibet-phantom-mcp",
-#       "env": {"PHANTOM_URL": "https://phantom.humotica.com"}
+#       "env": {"PHANTOM_URL": "https://your-phantom-server.example.com"}
 #     }
 #   }
 #
@@ -28,7 +28,7 @@ import sys
 # CONFIG
 # ============================================================================
 
-PHANTOM_BASE_URL = os.getenv("PHANTOM_URL", "https://phantom.humotica.com")
+PHANTOM_BASE_URL = os.getenv("PHANTOM_URL", "http://localhost:8000")
 TIMEOUT = float(os.getenv("PHANTOM_TIMEOUT", "30"))
 
 # ============================================================================
@@ -53,7 +53,7 @@ mcp = FastMCP(
     - phantom_fork_history: Fork/intervention history
 
     After sealing, resume on any device:
-      curl -s https://phantom.humotica.com/phantom/resume | sh
+      curl -s $PHANTOM_URL/phantom/resume | sh
 
     Part of the TIBET ecosystem — Traceable Intent-Based Event Tokens.
     """
@@ -127,7 +127,7 @@ def phantom_seal(
     Seal a session for cross-device resume.
 
     Creates a sealed Phantom session with full context. Resume on any device:
-      curl -s https://phantom.humotica.com/phantom/resume | sh
+      curl -s $PHANTOM_URL/phantom/resume | sh
 
     Args:
         task: What you're working on
